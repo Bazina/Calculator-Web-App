@@ -1,0 +1,74 @@
+<body>
+<div class="calculator">
+  <!-- Display -->
+  <div class="calculator__display">
+    <div class="display__input">{{displayedEqn}}</div>
+    <div class="display__output" [style.font-size]="changeFont()">{{displayedResult}}</div>
+    <div class="display__reader sr-only" role="alert" aria-live="polite"></div>
+  </div>
+  <!-- Keys -->
+  <div class="calculator__keys">
+    <button class="calculator__key calculator__key--operation"
+            [style.color]="errorFlag ? '#BEC7C7' : '#E97171'" [disabled]="errorFlag" (click)="percentTax()">
+      <fa-icon [icon]="faPercentage"></fa-icon>
+    </button>
+    <button class="calculator__key calculator__key--all-clear" (click)="delLastEntry()" aria-label="clear last">CE
+    </button>
+    <button class="calculator__key calculator__key--all-clear" (click)="delAll()" aria-label="All clear">C</button>
+    <button class="calculator__key calculator__key--backspace" (click)="backSpace()"
+            aria-label="Backspace">
+      <fa-icon [icon]="faBackspace"></fa-icon>
+    </button>
+    <button class="calculator__key calculator__key--operation" [style.color]="errorFlag ? '#BEC7C7' : '#E97171'"
+            [disabled]="errorFlag" (click)="oneOperand('inverse', '1/')"><sup>1</sup>/<sub>X</sub></button>
+    <button class="calculator__key calculator__key--operation square" [style.color]="errorFlag ? '#BEC7C7' : '#E97171'"
+            [disabled]="errorFlag" (click)="oneOperand('square', 'sqr')">X<sup>2</sup></button>
+    <button class="calculator__key calculator__key--operation"
+            [style.color]="errorFlag ? '#BEC7C7' : '#E97171'" [disabled]="errorFlag"
+            (click)="oneOperand('sqrt', 'sqrt')">
+      <fa-icon [icon]="faSquareRootAlt"></fa-icon>
+    </button>
+    <button class="calculator__key calculator__key--operation"
+            [style.color]="errorFlag ? '#BEC7C7' : '#E97171'" [disabled]="errorFlag" (click)="setOP('divide', '/')"
+            aria-label="divide">
+      <fa-icon [icon]="faDivide"></fa-icon>
+    </button>
+    <button class="calculator__key calculator__key--number" (click)="num('7')">7</button>
+    <button class="calculator__key calculator__key--number" (click)="num('8')">8</button>
+    <button class="calculator__key calculator__key--number" (click)="num('9')">9</button>
+    <button class="calculator__key calculator__key--operation"
+            [style.color]="errorFlag ? '#BEC7C7' : '#E97171'" [disabled]="errorFlag"
+            (click)="setOP('multiply', '&times;')">
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </button>
+    <button class="calculator__key calculator__key--number" (click)="num('4')">4</button>
+    <button class="calculator__key calculator__key--number" (click)="num('5')">5</button>
+    <button class="calculator__key calculator__key--number" (click)="num('6')">6</button>
+    <button class="calculator__key calculator__key--operation"
+            [style.color]="errorFlag ? '#BEC7C7' : '#E97171'" [disabled]="errorFlag"
+            (click)="setOP('subtract', '-')">
+      <fa-icon [icon]="faMinus"></fa-icon>
+    </button>
+    <button class="calculator__key calculator__key--number" (click)="num('1')">1</button>
+    <button class="calculator__key calculator__key--number" (click)="num('2')">2</button>
+    <button class="calculator__key calculator__key--number" (click)="num('3')">3</button>
+    <button class="calculator__key calculator__key--operation"
+            [style.color]="errorFlag ? '#BEC7C7' : '#E97171'" [disabled]="errorFlag"
+            (click)="setOP('add', '+')">
+      <fa-icon [icon]="faPlus"></fa-icon>
+    </button>
+    <button class="calculator__key calculator__key--operation plus-minus"
+            [style.color]="errorFlag ? '#BEC7C7' : '#E97171'" [disabled]="errorFlag"
+            (click)="oneOperand('negate', '+/-')">&#177;
+    </button>
+    <button class="calculator__key calculator__key--number" (click)="num('0')">0</button>
+    <button class="calculator__key calculator__key--number calculator__key--operation"
+            [style.color]="errorFlag ? '#BEC7C7' : '#E97171'" [disabled]="errorFlag" (click)="decimalPoint()">.
+    </button>
+    <button class="calculator__key calculator__key--equals"
+            [style.color]="errorFlag ? '#BEC7C7' : '#34D399'" [disabled]="errorFlag" (click)="calc()">
+      <fa-icon [icon]="faEquals"></fa-icon>
+    </button>
+  </div>
+</div>
+</body>
