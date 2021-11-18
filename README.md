@@ -1,6 +1,6 @@
 # Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12, and Spring Boot version 2.5.7 [Spring Boot](https://start.spring.io/).
 
 ## Development server
 
